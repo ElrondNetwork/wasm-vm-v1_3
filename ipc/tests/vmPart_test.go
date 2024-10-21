@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/multiversx/mx-chain-core-go/core"
-	"github.com/multiversx/mx-chain-vm-common-go"
+	vmcommon "github.com/multiversx/mx-chain-vm-common-go"
 	"github.com/multiversx/mx-chain-vm-common-go/builtInFunctions"
 	"github.com/multiversx/mx-chain-vm-v1_3-go/config"
 	"github.com/multiversx/mx-chain-vm-v1_3-go/ipc/common"
@@ -61,7 +61,7 @@ func doContractRequest(
 	t *testing.T,
 	tag string,
 	request common.MessageHandler,
-	blockchain vmcommon.BlockchainHook,
+	blockchain vmcommon.LegacyBlockchainHook,
 ) (common.MessageHandler, error) {
 	files := createTestFiles(t, tag)
 	var response common.MessageHandler

@@ -9,7 +9,7 @@ import (
 
 	logger "github.com/multiversx/mx-chain-logger-go"
 	"github.com/multiversx/mx-chain-logger-go/pipes"
-	"github.com/multiversx/mx-chain-vm-common-go"
+	vmcommon "github.com/multiversx/mx-chain-vm-common-go"
 	"github.com/multiversx/mx-chain-vm-v1_3-go/ipc/common"
 	"github.com/multiversx/mx-chain-vm-v1_3-go/ipc/marshaling"
 )
@@ -20,7 +20,7 @@ var _ vmcommon.VMExecutionHandler = (*VMDriver)(nil)
 
 // VMDriver manages the execution of the VM process
 type VMDriver struct {
-	blockchainHook      vmcommon.BlockchainHook
+	blockchainHook      vmcommon.LegacyBlockchainHook
 	vmArguments         common.VMArguments
 	config              Config
 	logsMarshalizer     marshaling.Marshalizer
@@ -52,7 +52,7 @@ type VMDriver struct {
 
 // NewVMDriver creates a new driver
 func NewVMDriver(
-	blockchainHook vmcommon.BlockchainHook,
+	blockchainHook vmcommon.LegacyBlockchainHook,
 	vmArguments common.VMArguments,
 	config Config,
 ) (*VMDriver, error) {
