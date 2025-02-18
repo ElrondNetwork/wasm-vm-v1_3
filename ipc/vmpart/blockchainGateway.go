@@ -2,6 +2,7 @@ package vmpart
 
 import (
 	"errors"
+
 	"github.com/multiversx/mx-chain-core-go/data/esdt"
 	"github.com/multiversx/mx-chain-vm-common-go"
 	"github.com/multiversx/mx-chain-vm-v1_3-go/ipc/common"
@@ -516,6 +517,26 @@ func (blockchain *BlockchainHookGateway) RevertToSnapshot(snapshot int) error {
 	}
 
 	return err
+}
+
+// RoundTime not used in 1.3
+func (blockchain *BlockchainHookGateway) RoundTime() uint64 {
+	return 0
+}
+
+// EpochStartBlockTimeStamp not used in 1.3
+func (blockchain *BlockchainHookGateway) EpochStartBlockTimeStamp() uint64 {
+	return 0
+}
+
+// EpochStartBlockNonce not used in 1.3
+func (blockchain *BlockchainHookGateway) EpochStartBlockNonce() uint64 {
+	return 0
+}
+
+// EpochStartBlockRound not used in 1.3
+func (blockchain *BlockchainHookGateway) EpochStartBlockRound() uint64 {
+	return 0
 }
 
 // ExecuteSmartContractCallOnOtherVM -

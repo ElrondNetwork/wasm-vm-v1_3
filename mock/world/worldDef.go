@@ -137,6 +137,26 @@ func (b *MockWorld) RevertToSnapshot(snapshot int) error {
 	return b.AccountsAdapter.RevertToSnapshot(snapshot)
 }
 
+// RoundTime -
+func (b *MockWorld) RoundTime() uint64 {
+	return 0
+}
+
+// EpochStartBlockTimeStamp -
+func (b *MockWorld) EpochStartBlockTimeStamp() uint64 {
+	return 0
+}
+
+// EpochStartBlockNonce -
+func (b *MockWorld) EpochStartBlockNonce() uint64 {
+	return 0
+}
+
+// EpochStartBlockRound -
+func (b *MockWorld) EpochStartBlockRound() uint64 {
+	return 0
+}
+
 // ExecuteSmartContractCallOnOtherVM -
 func (b *MockWorld) ExecuteSmartContractCallOnOtherVM(_ *vmcommon.ContractCallInput) (*vmcommon.VMOutput, error) {
 	return nil, errors.New("not implemented")
